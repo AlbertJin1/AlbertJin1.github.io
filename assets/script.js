@@ -33,7 +33,6 @@ let searchBtn = document.querySelector('.searchbtn');
 let cartBtn = document.querySelector('.cartbtn');
 let darkBtn = document.querySelector('.darkbtn');
 let signBtn = document.getElementById('signImg');
-let ambatuBtn = document.getElementById('ambatuImg');
 
 
 
@@ -87,7 +86,6 @@ darkBtn.onclick = function(){
         darkBtn.classList.add("bx-sun");
 
         signImg.src = './img/sign/sign-dark.png';
-        ambatuImg.src = './img/About/about-ambatu-d.png';
 
     }
     else{
@@ -95,7 +93,6 @@ darkBtn.onclick = function(){
         darkBtn.classList.add("bx-moon");
 
         signImg.src = './img/sign/sign-light.png';
-        ambatuImg.src = './img/About/about-ambatu.png';
     }
 }
 
