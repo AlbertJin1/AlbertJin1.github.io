@@ -95,7 +95,7 @@ darkBtn.onclick = function(){
         darkBtn.classList.add("bx-moon");
 
         signImg.src = './img/sign/sign-light.png';
-        ambatuImg.src = './img/about/about-ambatu.png';
+        ambatuImg.src = './img/About/about-ambatu.png';
     }
 }
 
