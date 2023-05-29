@@ -1,28 +1,28 @@
 // HOME CARO
 $('.home-carousel').owlCarousel({
-    loop:true,
-    margin:0,
+    loop: true,
+    margin: 0,
     dots: false,
     autoplay: true,
     autoplayTimeout: 7000,
     animateOut: 'fadeOut',
-    nav:false,
-    responsive:{
-        0:{
-            items:1
+    nav: false,
+    responsive: {
+        0: {
+            items: 1
         },
-        600:{
-            items:1
+        600: {
+            items: 1
         },
-        1000:{
-            items:1
+        1000: {
+            items: 1
         }
     }
 })
 
 
 // NAVBAR
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function () {
     let navbar = document.getElementById("navbar");
     navbar.classList.toggle('fixed', this.window.scrollY > 0)
 })
@@ -36,14 +36,14 @@ let signBtn = document.getElementById('signImg');
 
 
 
-menuBtn.onclick = function(){
+menuBtn.onclick = function () {
     document.getElementById("nav-items").classList.toggle('active');
 
-    if(document.getElementById("nav-items").classList.contains('active')){
+    if (document.getElementById("nav-items").classList.contains('active')) {
         menuBtn.classList.remove("bx-menu");
         menuBtn.classList.add("bx-x");
     }
-    else{
+    else {
         menuBtn.classList.remove("bx-x");
         menuBtn.classList.add("bx-menu");
     }
@@ -77,16 +77,16 @@ menuBtn.onclick = function(){
 //     }
 // }
 
-darkBtn.onclick = function(){
+darkBtn.onclick = function () {
     document.body.classList.toggle('dark-mode');
 
-    if(document.body.classList.contains('dark-mode')){
+    if (document.body.classList.contains('dark-mode')) {
         darkBtn.classList.remove("bx-moon");
         darkBtn.classList.add("bx-sun");
 
         signImg.src = './img/sign/sign-dark.png';
     }
-    else{
+    else {
         darkBtn.classList.remove("bx-sun");
         darkBtn.classList.add("bx-moon");
 
@@ -97,9 +97,9 @@ darkBtn.onclick = function(){
 // MENU SECTION
 let menuTabs = document.querySelector('.menu-tabs');
 
-menuTabs.addEventListener('click', function(e){
+menuTabs.addEventListener('click', function (e) {
 
-    if(e.target.classList.contains('menu-tab-item') && !e.target.classList.contains('active')){
+    if (e.target.classList.contains('menu-tab-item') && !e.target.classList.contains('active')) {
 
         const target = e.target.getAttribute("data-target");
 
@@ -113,25 +113,25 @@ menuTabs.addEventListener('click', function(e){
         menuSection.querySelector(target).classList.add("show");
     }
 
-    else{
+    else {
         return
     }
 })
 
 // BLOGS CAROU
 $('.blog-carousel').owlCarousel({
-    loop:true,
+    loop: true,
     dots: false,
-    margin:5,
-    responsive:{
-        0:{
-            items:1
+    margin: 5,
+    responsive: {
+        0: {
+            items: 1
         },
-        600:{
-            items:2
+        600: {
+            items: 2
         },
-        1000:{
-            items:3
+        1000: {
+            items: 3
         }
     }
 })
@@ -170,8 +170,26 @@ window.onload = calcScrollValue;
 // LOADER
 var loader = document.querySelector(".loader")
 
-window.addEventListener("load",vanish);
+window.addEventListener("load", vanish);
 
-function vanish(){
+function vanish() {
     loader.classList.add("disappear")
 }
+
+// LAZY
+var images = document.querySelectorAll('.lazy');
+
+var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.intersectionRatio > 0) {
+            entry.target.src = entry.target.dataset.src;
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    rootMargin: '200px'
+  });
+
+images.forEach(function (image) {
+    observer.observe(image);
+});

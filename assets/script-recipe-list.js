@@ -1,6 +1,6 @@
 
 // NAVBAR
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function () {
     let navbar = document.getElementById("navbar");
     navbar.classList.toggle('fixed', this.window.scrollY > 0)
 })
@@ -14,14 +14,14 @@ let signBtn = document.getElementById('signImg');
 
 
 
-menuBtn.onclick = function(){
+menuBtn.onclick = function () {
     document.getElementById("nav-items").classList.toggle('active');
 
-    if(document.getElementById("nav-items").classList.contains('active')){
+    if (document.getElementById("nav-items").classList.contains('active')) {
         menuBtn.classList.remove("bx-menu");
         menuBtn.classList.add("bx-x");
     }
-    else{
+    else {
         menuBtn.classList.remove("bx-x");
         menuBtn.classList.add("bx-menu");
     }
@@ -55,16 +55,16 @@ menuBtn.onclick = function(){
 //     }
 // }
 
-darkBtn.onclick = function(){
+darkBtn.onclick = function () {
     document.body.classList.toggle('dark-mode');
 
-    if(document.body.classList.contains('dark-mode')){
+    if (document.body.classList.contains('dark-mode')) {
         darkBtn.classList.remove("bx-moon");
         darkBtn.classList.add("bx-sun");
 
         signImg.src = './img/sign/sign-dark.png';
     }
-    else{
+    else {
         darkBtn.classList.remove("bx-sun");
         darkBtn.classList.add("bx-moon");
 
@@ -108,9 +108,9 @@ window.onload = calcScrollValue;
 // LOADER
 var loader = document.querySelector(".loader")
 
-window.addEventListener("load",vanish);
+window.addEventListener("load", vanish);
 
-function vanish(){
+function vanish() {
     loader.classList.add("disappear")
 }
 
@@ -119,7 +119,7 @@ function vanish(){
 var bmain = document.querySelector('.toggle-button-main');
 var cmain = document.getElementById("recipes-main");
 
-bmain.addEventListener('click', function() {
+bmain.addEventListener('click', function () {
 
     if (cmain.style.maxHeight) {
         cmain.style.maxHeight = null;
@@ -134,7 +134,7 @@ bmain.addEventListener('click', function() {
 var bappe = document.querySelector('.toggle-button-appe');
 var cappe = document.getElementById("recipes-appe");
 
-bappe.addEventListener('click', function() {
+bappe.addEventListener('click', function () {
 
     if (cappe.style.maxHeight) {
         cappe.style.maxHeight = null;
@@ -149,7 +149,7 @@ bappe.addEventListener('click', function() {
 var bdessert = document.querySelector('.toggle-button-dessert');
 var cdessert = document.getElementById("recipes-dessert");
 
-bdessert.addEventListener('click', function() {
+bdessert.addEventListener('click', function () {
 
     if (cdessert.style.maxHeight) {
         cdessert.style.maxHeight = null;
@@ -164,7 +164,7 @@ bdessert.addEventListener('click', function() {
 var bbeve = document.querySelector('.toggle-button-beve');
 var cbeve = document.getElementById("recipes-beve");
 
-bbeve.addEventListener('click', function() {
+bbeve.addEventListener('click', function () {
 
     if (cbeve.style.maxHeight) {
         cbeve.style.maxHeight = null;
